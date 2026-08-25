@@ -7,7 +7,7 @@ import dashboardImg from "@/assets/project-dashboard.jpg";
 import certImg from "@/assets/certificate-placeholder.jpg";
 
 /** Replace this file path with the real resume PDF in /public/resume/ */
-export const RESUME_URL = "/resume/Prachi-Madane-Resume.pdf";
+export const RESUME_URL = "/resume/Prachi_madane_resume.pdf";
 
 export const profile = {
   name: "Prachi Madane",
@@ -18,7 +18,7 @@ export const profile = {
   email: "prachimadane2004@gmail.com",
   phone: "+91 8669166390",
   github: "https://github.com/prachi-madane14",
-  linkedin: "https://www.linkedin.com/in/prachi-madane",
+  linkedin: "https://www.linkedin.com/in/prachi-madane-37734225b/",
   badges: ["MERN Stack", "AI/ML", "Data Analytics", "Generative AI", "Full Stack Development"],
 };
 
@@ -46,7 +46,7 @@ export const education = [
     school: "VidyaVardhini's College of Engineering and Technology",
     degree: "Bachelor of Engineering – Computer Engineering",
     period: "2022 – 2026",
-    score: "CGPA: 7.57",
+    score: "CGPA: 7.76",
   },
   {
     school: "Annasaheb Vartak College, Vasai",
@@ -76,62 +76,81 @@ export const skillGroups: { category: string; skills: Skill[] }[] = [
       { name: "JavaScript", logo: dev("javascript") },
     ],
   },
+
   {
     category: "Frontend",
     skills: [
       { name: "React.js", logo: dev("react") },
       { name: "HTML5", logo: dev("html5") },
+      { name: "CSS3", logo: dev("css3") },
       { name: "Tailwind CSS", logo: dev("tailwindcss") },
     ],
   },
+
   {
     category: "Backend",
     skills: [
       { name: "Node.js", logo: dev("nodejs") },
       { name: "Express.js", logo: dev("express") },
-      { name: "REST APIs" },
-      { name: "JWT Authentication" },
-      { name: "API Integration" },
+      { name: "REST APIs", logo: "https://cdn.simpleicons.org/fastapi/E8E9F0" },
+      { name: "JWT Authentication", logo: "https://cdn.simpleicons.org/jsonwebtokens/E8E9F0" },
+      { name: "API Integration", logo: "https://cdn.simpleicons.org/postman/FF6C37" },
       { name: "JSON", logo: dev("json") },
     ],
   },
+
   {
     category: "Databases",
     skills: [
       { name: "MongoDB", logo: dev("mongodb") },
-      { name: "MySQL", logo: dev("mysql") },
       { name: "MongoDB Atlas", logo: dev("mongodb") },
+      { name: "MySQL", logo: dev("mysql") },
     ],
   },
+
   {
     category: "AI & Machine Learning",
     skills: [
       { name: "Scikit-learn", logo: dev("scikitlearn") },
-      { name: "XGBoost" },
-      { name: "Random Forest" },
-      { name: "BERT" },
+      { name: "XGBoost", logo: "https://cdn.simpleicons.org/python/3776AB" },
+      { name: "Random Forest", logo: "https://cdn.simpleicons.org/python/3776AB" },
+      { name: "BERT", logo: "https://cdn.simpleicons.org/huggingface/FFD21E" },
       { name: "PyTorch", logo: dev("pytorch") },
       { name: "NumPy", logo: dev("numpy") },
-      { name: "SciPy" },
+      { name: "SciPy", logo: "https://cdn.simpleicons.org/scipy/8CAAE6" },
     ],
   },
+
   {
     category: "AI-Assisted Development",
     skills: [
-      { name: "ChatGPT" },
-      { name: "Claude", logo: "https://cdn.simpleicons.org/anthropic/FF90B3" },
+      { name: "ChatGPT", logo: "https://cdn.simpleicons.org/openai/FFFFFF" },
+      { name: "Claude", logo: "https://cdn.simpleicons.org/anthropic/FFFFFF" },
       { name: "Gemini", logo: "https://cdn.simpleicons.org/googlegemini/8BF5FA" },
-      { name: "Lovable" },
     ],
   },
+
   {
     category: "Generative AI",
     skills: [
-      { name: "LangChain", logo: "https://cdn.simpleicons.org/langchain/8BF5FA", note: "Learning" },
-      { name: "RAG", note: "Learning" },
-      { name: "Agentic AI", note: "Learning" },
+      {
+        name: "LangChain",
+        logo: "https://cdn.simpleicons.org/langchain/8BF5FA",
+        note: "Learning",
+      },
+      {
+        name: "RAG",
+        logo: "https://cdn.simpleicons.org/openai/FFFFFF",
+        note: "Learning",
+      },
+      {
+        name: "Agentic AI",
+        logo: "https://cdn.simpleicons.org/openai/FFFFFF",
+        note: "Learning",
+      },
     ],
   },
+
   {
     category: "Tools & Platforms",
     skills: [
@@ -139,9 +158,14 @@ export const skillGroups: { category: string; skills: Skill[] }[] = [
       { name: "GitHub", logo: "https://cdn.simpleicons.org/github/E8E9F0" },
       { name: "Postman", logo: dev("postman") },
       { name: "VS Code", logo: dev("vscode") },
-      { name: "AWS", logo: dev("amazonwebservices", "original-wordmark"), note: "Basics" },
-      { name: "Power BI" },
-      { name: "Excel" },
+      {
+        name: "AWS",
+        logo: dev("amazonwebservices", "original-wordmark"),
+        note: "Basics",
+      },
+      { name: "Power BI", logo: "https://cdn.simpleicons.org/powerbi/F2C811" },
+      { name: "Excel", logo: "https://cdn.simpleicons.org/microsoftexcel/217346" },
+      { name: "Canva", logo: "https://cdn.simpleicons.org/canva/00C4CC" },
     ],
   },
 ];
@@ -234,8 +258,7 @@ export const projects: Project[] = [
       "Centralized analysis management",
     ],
     links: [
-      { label: "Live Demo", href: "#" },
-      { label: "GitHub", href: "https://github.com/prachi-madane14" },
+      { label: "GitHub", href: "https://github.com/prachi-madane14/MAJOR-PROJECT-NeoDetect" },
       { label: "IEEE Publication", href: "https://ieeexplore.ieee.org/document/11559529" },
     ],
   },
@@ -265,8 +288,7 @@ export const projects: Project[] = [
       "Supabase data storage",
     ],
     links: [
-      { label: "Live Demo", href: "#" },
-      { label: "GitHub", href: "https://github.com/prachi-madane14" },
+      { label: "GitHub", href: "https://github.com/prachi-madane14/gbv-classifier" },
     ],
   },
   {
@@ -298,13 +320,13 @@ export const projects: Project[] = [
       "REST APIs",
     ],
     links: [
-      { label: "Live Demo", href: "#" },
-      { label: "GitHub", href: "https://github.com/prachi-madane14" },
+      { label: "Live Demo", href: " https://medi-link-sable.vercel.app" },
+      { label: "GitHub", href: "https://github.com/prachi-madane14/MediLink" },
     ],
   },
   {
-    id: "helloworld",
-    title: "HelloWorld – Interactive Language Learning Platform",
+    id: "GlobaLearn",
+    title: "GlobaLearn — World Culture & Language Learning Platform",
     categories: ["Full Stack"],
     badge: "Full Stack",
     role: "Full-Stack Developer",
@@ -330,8 +352,7 @@ export const projects: Project[] = [
       "JWT authentication",
     ],
     links: [
-      { label: "Live Demo", href: "#" },
-      { label: "GitHub", href: "https://github.com/prachi-madane14" },
+      { label: "GitHub", href: "https://github.com/prachi-madane14/GlobaLearn" },
     ],
   },
   {
@@ -361,8 +382,7 @@ export const projects: Project[] = [
       "REST APIs",
     ],
     links: [
-      { label: "Live Demo", href: "#" },
-      { label: "GitHub", href: "https://github.com/prachi-madane14" },
+      { label: "GitHub", href: "https://github.com/shrutipachpor810/MentHER" },
     ],
   },
   {
@@ -393,8 +413,7 @@ export const projects: Project[] = [
       "Business insights",
     ],
     links: [
-      { label: "Live Dashboard", href: "#" },
-      { label: "GitHub", href: "https://github.com/prachi-madane14" },
+      { label: "GitHub", href: "https://github.com/prachi-madane14/POWERBI-ECOMMERCE-SALES-DASHBOARD" },
     ],
   },
 ];
