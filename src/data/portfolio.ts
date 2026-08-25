@@ -277,7 +277,15 @@ export const projects: Project[] = [
       "Fine-tuned BERT / mBERT classifiers wrapped in a Streamlit application with multilingual sentiment analysis, voice input, social data analysis and automated reporting.",
     contribution:
       "Prepared and labelled datasets, fine-tuned the transformer models, built the Streamlit interface, and integrated Supabase authentication plus secure storage of analysis history.",
-    tech: ["Python", "Streamlit", "PyTorch", "Transformers", "BERT / mBERT", "Supabase", "Speech Recognition"],
+    tech: [
+      "Python",
+      "Streamlit",
+      "PyTorch",
+      "Transformers",
+      "BERT / mBERT",
+      "Supabase",
+      "Speech Recognition",
+    ],
     features: [
       "BERT-based classification",
       "Multilingual sentiment analysis",
@@ -287,9 +295,7 @@ export const projects: Project[] = [
       "Secure authentication",
       "Supabase data storage",
     ],
-    links: [
-      { label: "GitHub", href: "https://github.com/prachi-madane14/gbv-classifier" },
-    ],
+    links: [{ label: "GitHub", href: "https://github.com/prachi-madane14/gbv-classifier" }],
   },
   {
     id: "medilink",
@@ -306,7 +312,16 @@ export const projects: Project[] = [
       "A unified healthcare platform with role-based dashboards, digital prescriptions, OCR-based document digitisation and an AI assistant for health queries.",
     contribution:
       "Designed the data model, built 10+ REST APIs with JWT auth, implemented Tesseract.js OCR digitisation, integrated the Gemini-powered chatbot and built the analytics dashboards.",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "JWT", "Tesseract.js", "Postman", "Gemini API"],
+    tech: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB Atlas",
+      "JWT",
+      "Tesseract.js",
+      "Postman",
+      "Gemini API",
+    ],
     features: [
       "Doctor dashboard",
       "Patient dashboard",
@@ -351,9 +366,7 @@ export const projects: Project[] = [
       "Role-based access",
       "JWT authentication",
     ],
-    links: [
-      { label: "GitHub", href: "https://github.com/prachi-madane14/GlobaLearn" },
-    ],
+    links: [{ label: "GitHub", href: "https://github.com/prachi-madane14/GlobaLearn" }],
   },
   {
     id: "menther",
@@ -381,9 +394,7 @@ export const projects: Project[] = [
       "Profile management",
       "REST APIs",
     ],
-    links: [
-      { label: "GitHub", href: "https://github.com/shrutipachpor810/MentHER" },
-    ],
+    links: [{ label: "GitHub", href: "https://github.com/shrutipachpor810/MentHER" }],
   },
   {
     id: "ecommerce-dashboard",
@@ -413,7 +424,10 @@ export const projects: Project[] = [
       "Business insights",
     ],
     links: [
-      { label: "GitHub", href: "https://github.com/prachi-madane14/POWERBI-ECOMMERCE-SALES-DASHBOARD" },
+      {
+        label: "GitHub",
+        href: "https://github.com/prachi-madane14/POWERBI-ECOMMERCE-SALES-DASHBOARD",
+      },
     ],
   },
 ];
