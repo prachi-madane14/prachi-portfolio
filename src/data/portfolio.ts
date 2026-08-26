@@ -451,21 +451,48 @@ export const certifications = [
     issuer: "IBM Developer Skills Network",
     description:
       "Relational database fundamentals, SQL querying, joins and data manipulation using hands-on labs.",
-    image: certImg,
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/IBM%20SQLCertificate%20_%20Cognitive%20Class.pdf",
   },
   {
     title: "Data Analytics Job Simulation",
     issuer: "Deloitte",
     description:
       "Practical data analytics simulation covering data cleaning, forensic analysis and business insight reporting.",
-    image: certImg,
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/Deloitte%20certificate.pdf",
   },
   {
     title: "MERN Stack Development Certification Program",
     issuer: "EDBA Academy",
     description:
       "End-to-end MERN stack development: React interfaces, Express APIs, MongoDB modelling and authentication.",
-    image: certImg,
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/edba_academy_certificate.pdf",
+  },
+  {
+    title: "Certificate Course on Data Analytics",
+    issuer: "IBM SkillsBuild in Advanced IT Skills",
+    description:
+      "Data analytics fundamentals and practical skills completed through the IBM SkillsBuild Advanced IT Skills program, with a Grade A+.",
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/IBM%20certificate.png",
+  },
+  {
+    title: "Data Analyst",
+    issuer: "OneRoadmap",
+    description:
+      "Successfully passed the OneRoadmap Skill Certification Test for Data Analyst.",
+    certificateUrl:
+      "https://oneroadmap.io/skills/data-analyst/certificate/CERT-E7C83A89",
+  },
+  {
+    title: "Excel",
+    issuer: "OneRoadmap",
+    description:
+      "Successfully passed the OneRoadmap Skill Certification Test for Excel.",
+    certificateUrl:
+      "https://oneroadmap.io/skills/excel/certificate/CERT-FBE8B56C",
   },
 ];
 
