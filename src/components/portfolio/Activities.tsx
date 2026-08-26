@@ -6,15 +6,30 @@ export function Activities() {
   return (
     <Section id="activities">
       <SectionHeading eyebrow="Beyond code" title="Activities, workshops & strengths" />
-
       <div className="grid gap-5 md:grid-cols-2">
         {activities.map((a, i) => (
-          <Reveal key={a} delay={i * 70}>
-            <div className="glass glass-hover flex items-center gap-3 rounded-2xl p-5">
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-secondary/30 bg-secondary/10 text-secondary">
-                {a.includes("Blood") ? <HeartHandshake className="h-4 w-4" /> : <Sparkles className="h-4 w-4" />}
-              </span>
-              <p className="text-sm text-foreground/90">{a}</p>
+          <Reveal key={a.title} delay={i * 70}>
+            <div className="glass glass-hover rounded-2xl p-5">
+              <div className="flex items-center gap-3">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-secondary/30 bg-secondary/10 text-secondary">
+                  {a.title.includes("Blood") ? (
+                    <HeartHandshake className="h-4 w-4" />
+                  ) : (
+                    <Sparkles className="h-4 w-4" />
+                  )}
+                </span>
+
+                <p className="text-sm text-foreground/90">{a.title}</p>
+              </div>
+
+              <a
+                href={a.certificateUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-block text-sm font-medium text-accent hover:underline"
+              >
+                View Certificate →
+              </a>
             </div>
           </Reveal>
         ))}

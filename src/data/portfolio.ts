@@ -527,10 +527,31 @@ export const leadership = {
 };
 
 export const activities = [
-  "Participated in VCET Product Showcase – ABACUS'24",
-  "Participated in VCET VNPS'24",
-  "Participated in OSCILLATION'25",
-  "Volunteer at NSS Blood Camp",
+    {
+    title: "Volunteer at NSS Blood Camp",
+    certificateUrl: "https://github.com/prachi-madane14/certificates/blob/main/nss-blood-camp.pdf",
+  },
+  {
+    title: "Participated in VCET Product Showcase – ABACUS'24",
+    certificateUrl: "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/ABACUS'24.pdf",
+  },
+  {
+    title: "Presented Project at Vidyavardhini's National Level Project Showcase (VNPS'25)",
+    certificateUrl: "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/VNPS'25.jpg",
+  },
+  {
+    title: "Presented Project Research Paper at OSCILLATION'25",
+    certificateUrl: "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/Oscillation'25.jpg",
+  },
+  {
+    title: "Presented Project at Vidyavardhini's National Level Project Showcase (VNPS'26)",
+    certificateUrl: "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/VNPS'26.jpeg",
+  },
+  {
+    title: "Presented Project Research Paper at OSCILLATION'26",
+    certificateUrl: "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/OSCILLATION'26.jpeg",
+  },
+
 ];
 
 export const seminars = [
