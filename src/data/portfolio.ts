@@ -4,7 +4,6 @@ import medilinkImg from "@/assets/project-medilink.jpg";
 import helloworldImg from "@/assets/project-helloworld.jpg";
 import mentherImg from "@/assets/project-menther.jpg";
 import dashboardImg from "@/assets/project-dashboard.jpg";
-import certImg from "@/assets/certificate-placeholder.jpg";
 
 /** Replace this file path with the real resume PDF in /public/resume/ */
 export const RESUME_URL = "/resume/Prachi_madane_resume.pdf";
@@ -176,6 +175,8 @@ export const experience = [
     company: "Elevate Labs",
     mode: "Virtual Internship",
     period: "September 2025 – November 2025",
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/Internship/Web%20Development-INTERNSHIP.pdf",
     points: [
       "Built responsive websites",
       "Developed REST APIs",
@@ -189,6 +190,8 @@ export const experience = [
     company: "Elevate Labs",
     mode: "Virtual Internship",
     period: "November 2025 – December 2025",
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/Internship/Data%20Analyst-INTERNSHIP.pdf",
     points: [
       "Performed data cleaning",
       "Created visualizations",
@@ -481,18 +484,14 @@ export const certifications = [
   {
     title: "Data Analyst",
     issuer: "OneRoadmap",
-    description:
-      "Successfully passed the OneRoadmap Skill Certification Test for Data Analyst.",
-    certificateUrl:
-      "https://oneroadmap.io/skills/data-analyst/certificate/CERT-E7C83A89",
+    description: "Successfully passed the OneRoadmap Skill Certification Test for Data Analyst.",
+    certificateUrl: "https://oneroadmap.io/skills/data-analyst/certificate/CERT-E7C83A89",
   },
   {
     title: "Excel",
     issuer: "OneRoadmap",
-    description:
-      "Successfully passed the OneRoadmap Skill Certification Test for Excel.",
-    certificateUrl:
-      "https://oneroadmap.io/skills/excel/certificate/CERT-FBE8B56C",
+    description: "Successfully passed the OneRoadmap Skill Certification Test for Excel.",
+    certificateUrl: "https://oneroadmap.io/skills/excel/certificate/CERT-FBE8B56C",
   },
 ];
 
@@ -527,31 +526,50 @@ export const leadership = {
 };
 
 export const activities = [
-    {
+  {
     title: "Volunteer at NSS Blood Camp",
     certificateUrl: "https://github.com/prachi-madane14/certificates/blob/main/nss-blood-camp.pdf",
   },
   {
     title: "Participated in VCET Product Showcase – ABACUS'24",
-    certificateUrl: "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/ABACUS'24.pdf",
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/ABACUS'24.pdf",
   },
   {
     title: "Presented Project at Vidyavardhini's National Level Project Showcase (VNPS'25)",
-    certificateUrl: "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/VNPS'25.jpg",
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/VNPS'25.jpg",
   },
   {
     title: "Presented Project Research Paper at OSCILLATION'25",
-    certificateUrl: "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/Oscillation'25.jpg",
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/Oscillation'25.jpg",
   },
   {
     title: "Presented Project at Vidyavardhini's National Level Project Showcase (VNPS'26)",
-    certificateUrl: "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/VNPS'26.jpeg",
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/VNPS'26.jpeg",
   },
   {
     title: "Presented Project Research Paper at OSCILLATION'26",
-    certificateUrl: "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/OSCILLATION'26.jpeg",
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/OSCILLATION'26.jpeg",
   },
-
+  {
+    title: "National Financial Literacy Quiz 2026",
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/nism_certificate.pdf",
+  },
+  {
+    title: "AGENT'X",
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/RGIT_CERTIFICATE.jpg",
+  },
+  {
+    title: "TechSurf'25",
+    certificateUrl:
+      "https://github.com/prachi-madane14/MY-certificates/blob/main/Participation%20Certificate/tech_surf_certificate.pdf",
+  },
 ];
 
 export const seminars = [

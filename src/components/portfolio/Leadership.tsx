@@ -5,7 +5,11 @@ import { Reveal, Section, SectionHeading } from "./primitives";
 export function Leadership() {
   return (
     <Section id="leadership">
-      <SectionHeading eyebrow="Positions of responsibility" title={leadership.org} subtitle={leadership.about} />
+      <SectionHeading
+        eyebrow="Positions of responsibility"
+        title={leadership.org}
+        subtitle={leadership.about}
+      />
       <ol className="relative ml-3 border-l border-accent/25 pl-6 sm:pl-8">
         {leadership.roles.map((r, i) => (
           <Reveal as="li" key={r.role} delay={i * 100} className="relative pb-10 last:pb-0">

@@ -62,7 +62,11 @@ export function SectionHeading({
       <h2 className="text-3xl sm:text-4xl">
         <span className="text-gradient">{title}</span>
       </h2>
-      {subtitle ? <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">{subtitle}</p> : null}
+      {subtitle ? (
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+          {subtitle}
+        </p>
+      ) : null}
       <div className="divider-glow mt-6" />
     </Reveal>
   );
@@ -78,13 +82,22 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={cn("relative mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-24", className)}>
+    <section
+      id={id}
+      className={cn("relative mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-24", className)}
+    >
       {children}
     </section>
   );
 }
 
-export function Pill({ children, tone = "lavender" }: { children: ReactNode; tone?: "lavender" | "pink" | "mint" }) {
+export function Pill({
+  children,
+  tone = "lavender",
+}: {
+  children: ReactNode;
+  tone?: "lavender" | "pink" | "mint";
+}) {
   const tones = {
     lavender: "border-primary/40 text-primary shadow-[0_0_18px_-8px_var(--lavender)]",
     pink: "border-secondary/40 text-secondary shadow-[0_0_18px_-8px_var(--pink)]",

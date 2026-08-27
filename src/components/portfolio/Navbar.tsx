@@ -20,7 +20,9 @@ export function Navbar() {
       .filter((el): el is HTMLElement => Boolean(el));
     const io = new IntersectionObserver(
       (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
         if (visible[0]) setActive(visible[0].target.id);
       },
       { rootMargin: "-45% 0px -50% 0px", threshold: [0, 0.2, 0.6] },
@@ -40,8 +42,14 @@ export function Navbar() {
         scrolled ? "glass border-b border-border/60" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8" aria-label="Main">
-        <button onClick={() => go("home")} className="font-display text-lg font-semibold tracking-tight">
+      <nav
+        className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8"
+        aria-label="Main"
+      >
+        <button
+          onClick={() => go("home")}
+          className="font-display text-lg font-semibold tracking-tight"
+        >
           <span className="text-gradient">Prachi</span>
           <span className="text-foreground/70">.dev</span>
         </button>
@@ -62,26 +70,6 @@ export function Navbar() {
             </li>
           ))}
         </ul>
-
-        <div className="flex items-center gap-2">
-          <a
-            href={RESUME_URL}
-            download
-            aria-label="Download resume"
-            className="glow-btn hidden items-center gap-2 rounded-full border border-accent/40 bg-surface/60 px-3 py-1.5 text-xs text-accent sm:inline-flex"
-          >
-            <Download className="h-3.5 w-3.5" />
-            Resume
-          </a>
-          <button
-            className="grid h-9 w-9 place-items-center rounded-full border border-border text-foreground lg:hidden"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-          </button>
-        </div>
       </nav>
 
       {open ? (

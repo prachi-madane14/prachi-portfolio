@@ -15,7 +15,9 @@ export function Research() {
             <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-accent">
               <BookOpen className="h-3.5 w-3.5" /> IEEE Conference Paper
             </span>
-            <h3 className="mt-5 text-xl leading-snug text-foreground sm:text-2xl">{research.title}</h3>
+            <h3 className="mt-5 text-xl leading-snug text-foreground sm:text-2xl">
+              {research.title}
+            </h3>
             <p className="mt-3 text-sm text-primary">{research.venue}</p>
             <ul className="mt-6 space-y-3">
               {research.points.map((p) => (

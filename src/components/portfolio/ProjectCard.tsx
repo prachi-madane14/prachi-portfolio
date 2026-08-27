@@ -26,13 +26,18 @@ export function ProjectCard({ project, onOpen }: { project: Project; onOpen: () 
           </div>
 
           <h3 className="mt-4 text-xl text-foreground">{project.title}</h3>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            {project.description}
+          </p>
 
           <div className="mt-5">
             <p className="text-[11px] uppercase tracking-[0.2em] text-accent/80">Tech stack</p>
             <ul className="mt-2 flex flex-wrap gap-1.5">
               {project.tech.map((t) => (
-                <li key={t} className="rounded-full border border-primary/25 bg-surface/50 px-2.5 py-1 text-[11px] text-foreground/85">
+                <li
+                  key={t}
+                  className="rounded-full border border-primary/25 bg-surface/50 px-2.5 py-1 text-[11px] text-foreground/85"
+                >
                   {t}
                 </li>
               ))}
@@ -60,7 +65,11 @@ export function ProjectCard({ project, onOpen }: { project: Project; onOpen: () 
                 rel="noreferrer"
                 className="glow-btn inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-4 py-2 text-xs text-foreground/90 hover:border-accent/50"
               >
-                {l.label.includes("GitHub") ? <Github className="h-3.5 w-3.5" /> : <ExternalLink className="h-3.5 w-3.5" />}
+                {l.label.includes("GitHub") ? (
+                  <Github className="h-3.5 w-3.5" />
+                ) : (
+                  <ExternalLink className="h-3.5 w-3.5" />
+                )}
                 {l.label}
               </a>
             ))}

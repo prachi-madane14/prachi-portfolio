@@ -91,7 +91,10 @@
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     font-weight: 600;
     letter-spacing: -0.01em;
@@ -110,7 +113,10 @@
 }
 
 @utility glass-hover {
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s, box-shadow 0.4s;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.4s,
+    box-shadow 0.4s;
   &:hover {
     transform: translateY(-4px);
     border-color: color-mix(in oklab, var(--mint) 45%, transparent);
@@ -128,12 +134,21 @@
 @utility divider-glow {
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--lavender) 60%, transparent), color-mix(in oklab, var(--mint) 60%, transparent), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--lavender) 60%, transparent),
+    color-mix(in oklab, var(--mint) 60%, transparent),
+    transparent
+  );
 }
 
 @utility glow-btn {
   position: relative;
-  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s,
+    filter 0.3s;
   &:hover {
     transform: translateY(-2px);
     box-shadow: var(--glow-lavender);
@@ -144,7 +159,9 @@
 @utility reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   &[data-visible="true"] {
     opacity: 1;
     transform: none;
@@ -152,18 +169,34 @@
 }
 
 @keyframes float-soft {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
 }
 
 @keyframes pulse-ring {
-  0%, 100% { opacity: 0.55; transform: scale(1); }
-  50% { opacity: 0.9; transform: scale(1.04); }
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.04);
+  }
 }
 
 @keyframes gradient-slide {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 @utility animate-float-soft {
@@ -175,15 +208,26 @@
 }
 
 @utility animated-line {
-  background: linear-gradient(90deg, transparent, var(--lavender), var(--pink), var(--mint), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--lavender),
+    var(--pink),
+    var(--mint),
+    transparent
+  );
   background-size: 200% 100%;
   animation: gradient-slide 6s linear infinite;
   height: 1px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;

@@ -29,19 +29,30 @@ export function Contact() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-accent" />
-                <a href={`mailto:${profile.email}`} className="text-muted-foreground hover:text-foreground">
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="text-muted-foreground hover:text-foreground"
+                >
                   {profile.email}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-accent" />
-                <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className="text-muted-foreground hover:text-foreground">
+                <a
+                  href={`tel:${profile.phone.replace(/\s/g, "")}`}
+                  className="text-muted-foreground hover:text-foreground"
+                >
                   {profile.phone}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Github className="h-4 w-4 text-accent" />
-                <a href={profile.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground">
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-muted-foreground hover:text-foreground"
+                >
                   github.com/prachi-madane14
                 </a>
               </li>
@@ -77,7 +88,9 @@ export function Contact() {
                 className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-surface/40 py-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_0_30px_-12px_var(--mint)]"
               >
                 <Icon className="h-6 w-6 text-primary transition-colors group-hover:text-accent" />
-                <span className="text-xs text-muted-foreground group-hover:text-foreground">{label}</span>
+                <span className="text-xs text-muted-foreground group-hover:text-foreground">
+                  {label}
+                </span>
               </a>
             ))}
           </div>
