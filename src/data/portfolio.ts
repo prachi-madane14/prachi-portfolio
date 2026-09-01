@@ -212,13 +212,30 @@ export type Project = {
   role?: string;
   tool?: string;
   image: string;
+
   description: string;
   problem: string;
   solution: string;
   contribution: string;
+
   tech: string[];
   features: string[];
+
   links: { label: string; href: string }[];
+
+  dataset?: string;
+
+  results?: {
+    accuracy: string;
+    rocAuc: string;
+    bestModel: string;
+  };
+
+  publication?: string;
+
+  futureScope?: string[];
+
+  screenshots?: string[];
 };
 
 export const projects: Project[] = [
@@ -227,42 +244,97 @@ export const projects: Project[] = [
     title: "NeoDetect – AI-Based Neonatal Pain Detection System",
     categories: ["AI/ML", "Full Stack"],
     badge: "AI/ML + Full Stack",
-    role: "AI/ML + Full Stack Developer",
+    role: "AI/ML Engineer & Full-Stack Developer",
     image: neodetectImg,
+
     description:
-      "Developed an AI-based neonatal pain detection system using physiological signals including HR, SpO₂, and RR. Processed biomedical signals, performed feature engineering, and prepared datasets for machine learning. Trained and evaluated XGBoost and Random Forest models to classify neonatal pain levels. Developed a MERN-based web application with secure authentication, real-time prediction display, confidence score visualization, and centralized analysis-result management.",
+      "NeoDetect is a real-time multimodal machine learning system designed to automatically detect pain in neonates who cannot verbally communicate discomfort. The system combines EEG, ECG/RR-Interval, and SpO₂ physiological signals using feature-level multimodal fusion and applies machine learning models to classify neonatal states as Pain or No Pain. The platform integrates noise-aware preprocessing, SHAP explainability, FastAPI-based inference services, and a React-powered NICU monitoring dashboard to create an end-to-end neonatal pain monitoring solution.",
+
     problem:
-      "Neonates cannot verbalise pain, and manual observation-based scoring is subjective, intermittent and often delayed in busy neonatal care units.",
+      "Neonates cannot verbally express pain, making assessment dependent on manual observation-based scoring methods that are subjective, intermittent, and prone to delays in busy NICU environments.",
+
     solution:
-      "A multimodal machine learning pipeline that reads physiological signals (HR, SpO₂, RR), engineers clinically meaningful features and classifies pain levels in real time, surfaced through a secure MERN dashboard for clinicians.",
+      "Developed a multimodal machine learning framework that combines EEG, ECG/RR-Interval, and SpO₂ physiological signals. The system performs feature extraction, multimodal feature fusion, correlation-based feature selection, and real-time pain classification using Logistic Regression, Random Forest, and XGBoost. Predictions are served through a FastAPI backend and visualized using a React-based NICU monitoring dashboard.",
+
     contribution:
-      "Owned biomedical data preprocessing and feature engineering, trained and evaluated the XGBoost and Random Forest classifiers, and built the full MERN application including authentication, prediction APIs and confidence-score visualisation.",
+      "Led biomedical data preprocessing, multimodal feature engineering, correlation-based feature selection, machine learning model development, robustness analysis, SHAP explainability integration, FastAPI inference pipeline development, and React dashboard implementation. Co-authored and published the research work in IEEE ICSSSAIS 2026.",
+
     tech: [
-      "MongoDB",
-      "Express.js",
-      "React.js",
-      "Node.js",
       "Python",
       "Scikit-learn",
       "XGBoost",
       "Random Forest",
+      "Logistic Regression",
+      "SHAP",
+      "FastAPI",
+      "React",
+      "TypeScript",
       "NumPy",
+      "Pandas",
       "SciPy",
+    "RobustScaler",
+    "EEG",
+    "ECG/RR-Interval",
+    "SpO₂",
+  ],
+
+  features: [
+    "EEG Feature Analysis",
+    "ECG/RR-Interval Features",
+    "SpO₂ Feature Analysis",
+    "Multimodal Feature Fusion",
+    "Correlation-Based Feature Selection",
+    "Compact 7-Feature Representation",
+    "RobustScaler Normalization",
+    "5% Gaussian Noise Simulation",
+    "10% Label Noise Simulation",
+    "Logistic Regression",
+    "Random Forest",
+    "XGBoost",
+    "5-Fold Stratified Cross Validation",
+    "SHAP Explainable AI",
+    "Feature-Level Explanations",
+    "FastAPI Real-Time Inference",
+    "React NICU Monitoring Dashboard",
+    "CSV Simulation Mode",
+    "Pain Detection Alerts",
+    "Physiological Signal Visualization",
+    "Robustness Analysis",
+    "Multimodal Ablation Analysis",
+    "Inference Latency Evaluation",
+  ],
+
+  dataset:
+    "50,000-sample physiologically parameterized synthetic dataset with a nearly balanced class distribution: Pain 50.3% and No Pain 49.7%. A compact set of 7 features spanning EEG, ECG/RR, and SpO₂ was selected using correlation-based feature selection.",
+
+  results: {
+    accuracy: "85.26%",
+    rocAuc: "0.8879",
+    bestModel: "XGBoost",
+  },
+
+  publication:
+    "NeoDetect: Real-Time Multimodal Machine Learning for Neonatal Pain Detection — published in the Proceedings of the 4th International Conference on Self Sustainable Artificial Intelligence Systems (ICSSSAIS 2026), IEEE.",
+
+    futureScope: [
+      "Validation using real NICU physiological recordings",
+      "Prospective clinical studies",
+      "Larger and more diverse datasets",
+      "Real-world sensor artifact handling",
+      "Continuous physiological signal streaming",
+      "Advanced deep learning and temporal models",
+      "Integration with hospital monitoring systems",
     ],
-    features: [
-      "Biomedical data preprocessing",
-      "Feature engineering",
-      "ML model training",
-      "XGBoost prediction",
-      "Random Forest prediction",
-      "Confidence score visualization",
-      "Secure authentication",
-      "Real-time prediction display",
-      "Centralized analysis management",
-    ],
+
     links: [
-      { label: "GitHub", href: "https://github.com/prachi-madane14/MAJOR-PROJECT-NeoDetect" },
-      { label: "IEEE Publication", href: "https://ieeexplore.ieee.org/document/11559529" },
+      {
+        label: "GitHub",
+        href: "https://github.com/prachi-madane14/MAJOR-PROJECT-NeoDetect",
+      },
+      {
+        label: "IEEE Publication",
+        href: "https://ieeexplore.ieee.org/document/11559529",
+      },
     ],
   },
   {

@@ -5,9 +5,13 @@ import { Pill } from "./primitives";
 
 export function ProjectDetail({ project, onClose }: { project: Project; onClose: () => void }) {
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
+
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
@@ -19,18 +23,19 @@ export function ProjectDetail({ project, onClose }: { project: Project; onClose:
       role="dialog"
       aria-modal="true"
       aria-label={project.title}
-      className="fixed inset-0 z-[70] flex items-start justify-center overflow-y-auto bg-background/85 p-4 backdrop-blur-md sm:p-8"
+      className="fixed inset-0 z-70 flex items-start justify-center overflow-y-auto bg-background/85 p-4 backdrop-blur-md sm:p-8"
       onClick={onClose}
     >
       <div
-        className="glass my-6 w-full max-w-4xl rounded-3xl p-5 sm:p-8"
+        className="glass my-6 w-full max-w-5xl rounded-3xl p-5 sm:p-8"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
           className="glow-btn mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 px-4 py-2 text-xs text-primary"
         >
-          <ArrowLeft className="h-4 w-4" /> Back to Portfolio
+          <ArrowLeft className="h-4 w-4" />
+          Back to Portfolio
         </button>
 
         <img
@@ -43,33 +48,50 @@ export function ProjectDetail({ project, onClose }: { project: Project; onClose:
 
         <div className="flex flex-wrap items-center gap-2">
           <Pill tone="pink">{project.badge}</Pill>
-          {project.role ? <Pill>{project.role}</Pill> : null}
-          {project.tool ? <Pill tone="mint">{project.tool}</Pill> : null}
+
+          {project.role && <Pill>{project.role}</Pill>}
+
+          {project.tool && <Pill tone="mint">{project.tool}</Pill>}
         </div>
 
         <h3 className="mt-4 text-2xl text-foreground sm:text-3xl">{project.title}</h3>
+
         <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
           {[
-            { h: "Problem statement", t: project.problem },
-            { h: "Solution", t: project.solution },
-            { h: "My contribution", t: project.contribution },
-          ].map((b) => (
-            <div key={b.h} className="rounded-2xl border border-border bg-surface/40 p-5">
-              <h4 className="text-sm text-accent">{b.h}</h4>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.t}</p>
+            {
+              title: "Problem Statement",
+              content: project.problem,
+            },
+            {
+              title: "Solution",
+              content: project.solution,
+            },
+            {
+              title: "My Contribution",
+              content: project.contribution,
+            },
+          ].map((section) => (
+            <div key={section.title} className="rounded-2xl border border-border bg-surface/40 p-5">
+              <h4 className="text-sm font-medium text-accent">{section.title}</h4>
+
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {section.content}
+              </p>
             </div>
           ))}
+
           <div className="rounded-2xl border border-border bg-surface/40 p-5">
-            <h4 className="text-sm text-accent">Technologies</h4>
+            <h4 className="text-sm font-medium text-accent">Technologies</h4>
+
             <ul className="mt-3 flex flex-wrap gap-2">
-              {project.tech.map((t) => (
+              {project.tech.map((tech) => (
                 <li
-                  key={t}
-                  className="rounded-full border border-primary/25 px-2.5 py-1 text-[11px] text-foreground/85"
+                  key={tech}
+                  className="rounded-full border border-primary/25 px-3 py-1 text-[11px] text-foreground/85"
                 >
-                  {t}
+                  {tech}
                 </li>
               ))}
             </ul>
@@ -77,49 +99,118 @@ export function ProjectDetail({ project, onClose }: { project: Project; onClose:
         </div>
 
         <div className="mt-6 rounded-2xl border border-border bg-surface/40 p-5">
-          <h4 className="text-sm text-accent">Features</h4>
+          <h4 className="text-sm font-medium text-accent">Key Features</h4>
+
           <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-            {project.features.map((f) => (
-              <li key={f} className="flex gap-2 text-sm text-muted-foreground">
+            {project.features.map((feature) => (
+              <li key={feature} className="flex gap-2 text-sm text-muted-foreground">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary/80" />
-                {f}
+                {feature}
               </li>
             ))}
           </ul>
         </div>
 
+        {project.dataset && (
+          <div className="mt-6 rounded-2xl border border-border bg-surface/40 p-5">
+            <h4 className="text-sm font-medium text-accent">Dataset</h4>
+
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{project.dataset}</p>
+          </div>
+        )}
+
+        {project.results && (
+          <div className="mt-6">
+            <h4 className="mb-4 text-sm font-medium text-accent">Research Results</h4>
+
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-border bg-surface/40 p-5 text-center">
+                <p className="text-xs text-muted-foreground">Best Accuracy</p>
+
+                <p className="mt-2 text-3xl font-bold text-foreground">
+                  {project.results.accuracy}
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-border bg-surface/40 p-5 text-center">
+                <p className="text-xs text-muted-foreground">ROC-AUC</p>
+
+                <p className="mt-2 text-3xl font-bold text-foreground">{project.results.rocAuc}</p>
+              </div>
+
+              <div className="rounded-2xl border border-border bg-surface/40 p-5 text-center">
+                <p className="text-xs text-muted-foreground">Best Model</p>
+
+                <p className="mt-2 text-xl font-bold text-foreground">
+                  {project.results.bestModel}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {project.publication && (
+          <div className="mt-6 rounded-2xl border border-border bg-surface/40 p-5">
+            <h4 className="text-sm font-medium text-accent">Research Publication</h4>
+
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {project.publication}
+            </p>
+          </div>
+        )}
+
+        {project.futureScope && (
+          <div className="mt-6 rounded-2xl border border-border bg-surface/40 p-5">
+            <h4 className="text-sm font-medium text-accent">Future Scope</h4>
+
+            <ul className="mt-3 grid gap-2">
+              {project.futureScope.map((item) => (
+                <li key={item} className="flex gap-2 text-sm text-muted-foreground">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-secondary/80" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <div className="mt-6">
-          <h4 className="text-sm text-accent">Screenshots</h4>
+          <h4 className="text-sm font-medium text-accent">Screenshots</h4>
+
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
-            {[0, 1].map((n) => (
+            {(project.screenshots?.length
+              ? project.screenshots
+              : [project.image, project.image]
+            ).map((img, index) => (
               <img
-                key={n}
-                src={project.image}
-                alt={`${project.title} screenshot ${n + 1}`}
+                key={index}
+                src={img}
+                alt={`${project.title} screenshot ${index + 1}`}
                 loading="lazy"
                 width={1200}
                 height={750}
-                className="w-full rounded-xl border border-border object-cover opacity-90"
+                className="w-full rounded-xl border border-border object-cover"
               />
             ))}
           </div>
         </div>
 
         <div className="mt-8 flex flex-wrap gap-3">
-          {project.links.map((l) => (
+          {project.links.map((link) => (
             <a
-              key={l.label}
-              href={l.href}
-              target={l.href.startsWith("http") ? "_blank" : undefined}
+              key={link.label}
+              href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
               rel="noreferrer"
               className="glow-btn inline-flex items-center gap-2 rounded-full border border-accent/40 bg-surface/60 px-4 py-2 text-xs text-accent"
             >
-              {l.label.includes("GitHub") ? (
+              {link.label.toLowerCase().includes("github") ? (
                 <Github className="h-3.5 w-3.5" />
               ) : (
                 <ExternalLink className="h-3.5 w-3.5" />
               )}
-              {l.label}
+
+              {link.label}
             </a>
           ))}
         </div>

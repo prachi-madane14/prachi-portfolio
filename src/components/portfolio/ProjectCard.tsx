@@ -15,7 +15,7 @@ export function ProjectCard({ project, onOpen }: { project: Project; onOpen: () 
             height={750}
             className="h-56 w-full object-cover transition-transform duration-700 hover:scale-105 lg:h-full"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
+          <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/70 to-transparent" />
         </div>
 
         <div className="p-6 sm:p-8">
