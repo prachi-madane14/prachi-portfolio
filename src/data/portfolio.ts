@@ -1,4 +1,8 @@
 import neodetectImg from "@/assets/project-neodetect.jpg";
+import neoCsvImg from "@/assets/neodetect-csv-upload.png";
+import neoNormalImg from "@/assets/neodetect-normal-dashboard.png";
+import neoPainImg from "@/assets/neodetect-pain-dashboard.png";
+import neoShapImg from "@/assets/neodetect-shap.png";
 import gbvImg from "@/assets/project-gbv.jpg";
 import medilinkImg from "@/assets/project-medilink.jpg";
 import helloworldImg from "@/assets/project-helloworld.jpg";
@@ -235,7 +239,11 @@ export type Project = {
 
   futureScope?: string[];
 
-  screenshots?: string[];
+  screenshots?: {
+    image: string;
+    title: string;
+    description: string;
+}[];
 };
 
 export const projects: Project[] = [
@@ -245,8 +253,7 @@ export const projects: Project[] = [
     categories: ["AI/ML", "Full Stack"],
     badge: "AI/ML + Full Stack",
     role: "AI/ML Engineer & Full-Stack Developer",
-    image: neodetectImg,
-
+    image: neoNormalImg,
     description:
       "NeoDetect is a real-time multimodal machine learning system designed to automatically detect pain in neonates who cannot verbally communicate discomfort. The system combines EEG, ECG/RR-Interval, and SpO₂ physiological signals using feature-level multimodal fusion and applies machine learning models to classify neonatal states as Pain or No Pain. The platform integrates noise-aware preprocessing, SHAP explainability, FastAPI-based inference services, and a React-powered NICU monitoring dashboard to create an end-to-end neonatal pain monitoring solution.",
 
@@ -336,6 +343,35 @@ export const projects: Project[] = [
         href: "https://ieeexplore.ieee.org/document/11559529",
       },
     ],
+    screenshots: [
+  {
+    image: neoCsvImg,
+    title: "CSV Simulation Mode",
+    description:
+      "The CSV Simulation Mode provides the entry point for batch-based analysis. Users can upload a CSV dataset containing the seven predefined NeoDetect features. After uploading a valid file, the system sequentially processes each row through the prediction pipeline and generates real-time predictions and analysis."
+  },
+
+  {
+    image: neoNormalImg,
+    title: "Pain-Free Monitoring Dashboard",
+    description:
+      "The monitoring dashboard displays the system in a normal, pain-free state. It provides the current prediction, pain probability, alert history, and key physiological indicators such as EEG Kurtosis, RR Interval, SpO₂ Drop, and Delta Power, along with live signal visualizations."
+  },
+
+  {
+    image: neoPainImg,
+    title: "Pain Detection Dashboard",
+    description:
+      "The active alert dashboard displays a PAIN DETECTED state during real-time streaming. Abnormal physiological indicators are highlighted, while EEG, cardiac, and SpO₂ signals are visualized with threshold references to help identify patterns associated with the predicted pain state."
+  },
+
+  {
+    image: neoShapImg,
+    title: "SHAP Explainability",
+    description:
+      "NeoDetect uses SHAP-based Explainable AI (XAI) to provide insight into model predictions. Feature contribution bars show how physiological parameters such as Delta Power, SpO₂ Drop, EEG Kurtosis, and RR Interval influence the prediction, helping users understand the reasoning behind each classification."
+  }
+],
   },
   {
     id: "gbv-detection",
