@@ -23,6 +23,9 @@ export function Projects() {
         subtitle="Full stack products, applied machine learning systems and analytics dashboards — filter to explore."
       />
 
+      {/* =========================================================
+          PROJECT FILTERS
+          ========================================================= */}
       <Reveal className="mb-10 flex flex-wrap gap-2">
         {filters.map((f) => (
           <button
@@ -41,14 +44,23 @@ export function Projects() {
         ))}
       </Reveal>
 
-      <div className="flex flex-col gap-8">
+      {/* =========================================================
+          PROJECT GRID
+          1 column  → Mobile
+          2 columns → Tablet
+          3 columns → Desktop
+          ========================================================= */}
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {visible.map((p, i) => (
-          <Reveal key={p.id} delay={i * 60}>
+          <Reveal key={p.id} delay={i * 60} className="h-full">
             <ProjectCard project={p} onOpen={() => setSelected(p)} />
           </Reveal>
         ))}
       </div>
 
+      {/* =========================================================
+          PROJECT DETAIL MODAL
+          ========================================================= */}
       {selected ? <ProjectDetail project={selected} onClose={() => setSelected(null)} /> : null}
     </Section>
   );
