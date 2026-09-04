@@ -8,14 +8,14 @@ export function ProjectCard({ project, onOpen }: { project: Project; onOpen: () 
       {/* =========================================================
           PROJECT IMAGE
           ========================================================= */}
-      <div className="relative w-full overflow-hidden bg-surface/30">
+      <div className="relative w-full h-48 overflow-hidden bg-surface/30">
         <img
           src={project.image}
           alt={`${project.title} preview`}
           loading="lazy"
           width={1200}
           height={750}
-          className="block h-auto w-full"
+          className="block h-full w-full object-cover"
         />
       </div>
 
