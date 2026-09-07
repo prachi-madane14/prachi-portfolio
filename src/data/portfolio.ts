@@ -8,6 +8,12 @@ import medilinkImg from "@/assets/project-medilink.jpg";
 import helloworldImg from "@/assets/project-helloworld.jpg";
 import mentherImg from "@/assets/project-menther.jpg";
 import dashboardImg from "@/assets/project-dashboard.jpg";
+import mentherHomeImg from "@/assets/menther-home.png";
+import mentherAboutImg from "@/assets/menther-about.png";
+import mentherLoginImg from "@/assets/menther-login.png";
+import mentherSignupImg from "@/assets/menther-signup.png";
+import mentherMenteeDashboardImg from "@/assets/menther-mentee-dashboard.png";
+import mentherMentorDashboardImg from "@/assets/menther-mentor-dashboard.png";
 
 /** Replace this file path with the real resume PDF in /public/resume/ */
 export const RESUME_URL = "/resume/Prachi_madane_resume.pdf";
@@ -534,6 +540,49 @@ export const projects: Project[] = [
       "Data modeling",
       "Business insights",
     ],
+      screenshots: [
+    {
+      image: mentherHomeImg,
+      title: "Home Page",
+      description:
+        "The MentHER landing page introduces the platform and its purpose of connecting women in technology with experienced mentors. It provides clear navigation to explore the platform, learn about the mentorship experience, and get started.",
+    },
+
+    {
+      image: mentherAboutImg,
+      title: "About Page",
+      description:
+        "The About page explains the purpose of MentHER, the mentorship ecosystem, and how the platform supports women in technology through meaningful professional connections and guidance.",
+    },
+
+    {
+      image: mentherLoginImg,
+      title: "Login Page",
+      description:
+        "The Login page provides secure authentication for existing mentors and mentees, allowing users to access their personalized dashboards and platform features.",
+    },
+
+    {
+      image: mentherSignupImg,
+      title: "Signup Page",
+        description:
+        "The Signup page allows new users to create an account and join the MentHER platform, supporting role-based registration for mentors and mentees.",
+    },
+
+    {
+      image: mentherMenteeDashboardImg,
+      title: "Mentee Dashboard",
+      description:
+        "The Mentee Dashboard provides a personalized space for discovering mentors, managing mentorship interactions, viewing profiles, and accessing relevant mentorship activities.",
+    },
+
+    {
+      image: mentherMentorDashboardImg,
+      title: "Mentor Dashboard",
+      description:
+        "The Mentor Dashboard allows mentors to manage their profiles, interact with mentees, handle mentorship connections, and participate in the platform's real-time communication experience.",
+    },
+  ],
     links: [
       {
         label: "GitHub",
