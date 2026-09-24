@@ -27,7 +27,7 @@ export function Reveal({
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.1, rootMargin: "0px 0px -30px 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -57,13 +57,16 @@ export function SectionHeading({
   subtitle?: string;
 }) {
   return (
-    <Reveal className="mb-12 max-w-2xl">
-      <p className="mb-3 text-xs font-medium uppercase tracking-[0.28em] text-mint/80">{eyebrow}</p>
-      <h2 className="text-3xl sm:text-4xl">
+    <Reveal className="mb-12 max-w-3xl">
+      <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-xs font-semibold tracking-wider text-cyan-400 uppercase">
+        <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22D3EE]" />
+        {eyebrow}
+      </div>
+      <h2 className="text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl lg:text-5xl">
         <span className="text-gradient">{title}</span>
       </h2>
       {subtitle ? (
-        <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+        <p className="mt-4 text-sm leading-relaxed text-slate-400 sm:text-base">
           {subtitle}
         </p>
       ) : null}
@@ -84,7 +87,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn("relative mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-24", className)}
+      className={cn("relative mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24", className)}
     >
       {children}
     </section>
@@ -99,14 +102,14 @@ export function Pill({
   tone?: "lavender" | "pink" | "mint";
 }) {
   const tones = {
-    lavender: "border-primary/40 text-primary shadow-[0_0_18px_-8px_var(--lavender)]",
-    pink: "border-secondary/40 text-secondary shadow-[0_0_18px_-8px_var(--pink)]",
-    mint: "border-accent/40 text-accent shadow-[0_0_18px_-8px_var(--mint)]",
+    lavender: "border-purple-500/30 bg-purple-500/10 text-purple-300 shadow-[0_0_12px_rgba(139,92,246,0.2)]",
+    pink: "border-pink-500/30 bg-pink-500/10 text-pink-300 shadow-[0_0_12px_rgba(236,72,153,0.2)]",
+    mint: "border-cyan-500/30 bg-cyan-500/10 text-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.2)]",
   } as const;
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full border bg-surface/60 px-3 py-1 text-xs font-medium backdrop-blur-sm",
+        "inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium backdrop-blur-md transition-all duration-200",
         tones[tone],
       )}
     >

@@ -1,92 +1,113 @@
-import { ExternalLink, Github, Maximize2 } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import type { Project } from "@/data/portfolio";
 import { Pill } from "./primitives";
 
-export function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void }) {
+export function ProjectCard({
+  project,
+  index,
+  onOpen,
+}: {
+  project: Project;
+  index: number;
+  onOpen: () => void;
+}) {
+  const isEven = index % 2 === 0;
+
   return (
-    <article className="glass glass-hover flex h-full flex-col overflow-hidden rounded-3xl">
-      {/* =========================================================
-          PROJECT IMAGE
-          ========================================================= */}
-      <div className="relative w-full h-48 overflow-hidden bg-surface/30">
-        <img
-          src={project.image}
-          alt={`${project.title} preview`}
-          loading="lazy"
-          width={1200}
-          height={750}
-          className="block h-full w-full object-cover"
-        />
-      </div>
+    <article
+      data-cursor="project"
+      onClick={onOpen}
+      className="group relative cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-[#0A0A0A] p-6 sm:p-9 transition-all duration-500 hover:border-cyan-500/50 hover:bg-white/[0.03] hover:shadow-[0_25px_60px_rgba(0,0,0,0.9),0_0_35px_rgba(34,211,238,0.2)]"
+    >
+      <div
+        className={`grid gap-8 lg:grid-cols-2 lg:items-center ${
+          isEven ? "" : "lg:grid-flow-dense"
+        }`}
+      >
+        {/* Project Visual Container */}
+        <div
+          className={`relative overflow-hidden rounded-2xl border border-white/10 bg-[#050505] aspect-[16/10] ${
+            isEven ? "" : "lg:col-start-2"
+          }`}
+        >
+          <img
+            src={project.image}
+            alt={`${project.title} preview`}
+            loading="lazy"
+            width={1200}
+            height={750}
+            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+          {/* Subtle Dark Gradient Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-30" />
 
-      {/* =========================================================
-          PROJECT INFORMATION
-          ========================================================= */}
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
-        {/* Badges */}
-        <div className="flex flex-wrap items-center gap-2">
-          <Pill tone="pink">{project.badge}</Pill>
-
-          {project.role ? <Pill>{project.role}</Pill> : null}
-
-          {project.tool ? <Pill tone="mint">{project.tool}</Pill> : null}
+          {/* Floating Number Badge inside image */}
+          <div className="absolute top-4 left-4 font-mono text-xl font-extrabold text-cyan-400 bg-[#050505]/80 backdrop-blur-md border border-cyan-500/30 px-3 py-1 rounded-lg">
+            0{index + 1}
+          </div>
         </div>
 
-        {/* Title */}
-        <h3 className="mt-4 text-xl leading-snug text-foreground">{project.title}</h3>
+        {/* Project Info */}
+        <div className="flex flex-col justify-center">
+          <div className="flex flex-wrap items-center gap-2 mb-3">
+            <Pill tone="pink">{project.badge}</Pill>
+            {project.role ? <Pill tone="lavender">{project.role}</Pill> : null}
+            {project.tool ? <Pill tone="mint">{project.tool}</Pill> : null}
+          </div>
 
-        {/* Description */}
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+          <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white group-hover:text-cyan-300 transition-colors">
+            {project.title}
+          </h3>
 
-        {/* =======================================================
-            TECH STACK
-            ======================================================= */}
-        <div className="mt-5">
-          <p className="text-[11px] uppercase tracking-[0.2em] text-accent/80">Tech stack</p>
+          <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-300 line-clamp-3">
+            {project.description}
+          </p>
 
-          <ul className="mt-2 flex flex-wrap gap-1.5">
-            {project.tech.map((tech) => (
-              <li
-                key={tech}
-                className="rounded-full border border-primary/25 bg-surface/50 px-2.5 py-1 text-[11px] text-foreground/85"
+          {/* Tech Stack */}
+          <div className="mt-6">
+            <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-cyan-400 mb-2">
+              TECH STACK
+            </p>
+            <ul className="flex flex-wrap gap-2">
+              {project.tech.map((tech) => (
+                <li
+                  key={tech}
+                  className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-mono text-slate-300 group-hover:border-cyan-500/30 group-hover:text-white transition-colors"
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Action Links */}
+          <div className="mt-8 flex flex-wrap items-center gap-3 pt-6 border-t border-white/10">
+            {project.links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-bold text-slate-200 transition-all hover:border-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300"
               >
-                {tech}
-              </li>
+                {link.label.includes("GitHub") ? (
+                  <Github className="h-3.5 w-3.5" />
+                ) : (
+                  <ExternalLink className="h-3.5 w-3.5 text-cyan-400" />
+                )}
+                <span>{link.label}</span>
+              </a>
             ))}
-          </ul>
-        </div>
 
-        {/* =======================================================
-            BUTTONS
-            ======================================================= */}
-        <div className="mt-auto flex flex-wrap gap-2.5 pt-6">
-          {project.links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith("http") ? "_blank" : undefined}
-              rel="noreferrer"
-              className="glow-btn inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-4 py-2 text-xs text-foreground/90 hover:border-accent/50"
+            <button
+              onClick={onOpen}
+              className="ml-auto inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 px-5 py-2 text-xs font-bold text-white shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]"
             >
-              {link.label.includes("GitHub") ? (
-                <Github className="h-3.5 w-3.5" />
-              ) : (
-                <ExternalLink className="h-3.5 w-3.5" />
-              )}
-
-              {link.label}
-            </a>
-          ))}
-
-          {/* View Project */}
-          <button
-            onClick={onOpen}
-            className="glow-btn inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium text-primary-foreground"
-            style={{ backgroundImage: "var(--gradient-brand)" }}
-          >
-            <Maximize2 className="h-3.5 w-3.5" />
-            View Project
-          </button>
+              <span>VIEW CASE STUDY</span>
+              <ArrowUpRight className="h-4 w-4" />
+            </button>
+          </div>
         </div>
       </div>
     </article>

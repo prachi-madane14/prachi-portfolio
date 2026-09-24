@@ -16,12 +16,12 @@ export function BackToTop() {
       type="button"
       aria-label="Back to top"
       onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
-      className={`glow-btn fixed bottom-6 right-6 z-50 grid h-12 w-12 place-items-center rounded-full border border-accent/50 bg-surface/80 text-accent backdrop-blur-md transition-all duration-300 ${
+      className={`fixed bottom-8 right-8 z-40 flex items-center gap-2 rounded-full border border-cyan-500/40 bg-[#0A0A0A]/90 px-4 py-2.5 font-mono text-xs font-bold tracking-wider text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.3)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-400 hover:text-white ${
         show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
       }`}
-      style={{ boxShadow: "var(--glow-mint)" }}
     >
-      <ArrowUp className="h-5 w-5" />
+      <span>BACK TO TOP</span>
+      <ArrowUp className="h-4 w-4" />
     </button>
   );
 }

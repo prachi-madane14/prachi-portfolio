@@ -13,8 +13,9 @@ import { Activities } from "@/components/portfolio/Activities";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { BackToTop } from "@/components/portfolio/BackToTop";
-import { CursorTrail } from "@/components/portfolio/CursorTrail";
 import { Backdrop } from "@/components/portfolio/Backdrop";
+import { LoadingScreen } from "@/components/portfolio/LoadingScreen";
+import { CustomCursor } from "@/components/portfolio/CustomCursor";
 
 const title = "Prachi Madane | Full Stack Developer | AI/ML Engineer";
 const description =
@@ -61,8 +62,9 @@ export const Route = createFileRoute("/")({
 function Portfolio() {
   return (
     <>
+      <LoadingScreen />
+      <CustomCursor />
       <Backdrop />
-      <CursorTrail />
       <Navbar />
       <main>
         <Hero />
