@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Download, Terminal, Cpu, Database } from "lucide-react";
+import { ArrowRight, Download, Terminal, Cpu, Database, Mail, Linkedin, Github } from "lucide-react";
 import { profile, RESUME_URL } from "@/data/portfolio";
 import profilePhoto from "@/assets/profile-placeholder.jpg";
 import { Reveal } from "./primitives";
@@ -70,7 +70,7 @@ export function Hero() {
             {profile.intro}
           </p>
 
-          {/* Action CTAs */}
+          {/* Action CTAs + Social Icon Buttons */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <button
               onClick={() => scrollTo("projects")}
@@ -88,6 +88,35 @@ export function Hero() {
               <Download className="h-4 w-4 text-cyan-400" />
               <span>DOWNLOAD RESUME</span>
             </a>
+
+            {/* Lightweight Hero Social Icons */}
+            <div className="flex items-center gap-2.5">
+              <a
+                href={`mailto:${profile.email}`}
+                aria-label="Email"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-slate-300 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:border-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)]"
+              >
+                <Mail className="h-4 w-4" />
+              </a>
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-slate-300 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:border-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)]"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-slate-300 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:border-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)]"
+              >
+                <Github className="h-4 w-4" />
+              </a>
+            </div>
           </div>
         </Reveal>
 
@@ -111,7 +140,7 @@ export function Hero() {
                   alt="Portrait of Prachi Madane"
                   width={900}
                   height={900}
-                  className="h-full w-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-100"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-60" />
               </div>
